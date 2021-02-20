@@ -1,0 +1,44 @@
+{%extends "DEMOAPP/base.html" %}
+{% block content %}
+<div class="row">
+    <section class="hero">
+      <div class="row containers">
+        <div class="col-md-offset-1 col para-a para">
+          <h5 class="white para">If you're viewing this page, it means you're logged in. Congratulations !</h5>
+            <hr>
+            <h5 class="white para">Upload your music here.</h5>
+        <form method="post" enctype="multipart/form-data" action="predictMusic">
+            {% csrf_token %}
+            <div class="white para">
+                <h3>Upload:</h3>
+                <br>
+                <input type= "file" name ="filePath" />
+                <br>
+                <input class="hero" type="submit" value="submit"/>
+            </div>
+        </form>
+        </div>
+        <div class="col image">
+          <img src="images/music.png" alt="" srcset="">
+        </div>
+      </div>
+    </section>
+    <div class="col-md-offset-2">
+
+
+    </div>
+</div>
+
+{% if displaydlink %}
+<section class="unlimited ">
+      <div class="row containers para">
+        <div class="col-md-offset-1 col para flex-basis">
+            <a href="\media\test1.mid" download=""><h3>Download</h3>
+            </a>
+        </div>
+        </div>
+      </div>
+</section>
+{% endif %}
+
+{% endblock content%}

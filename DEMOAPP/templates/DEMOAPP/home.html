@@ -1,0 +1,80 @@
+{%extends "DEMOAPP/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- hero section -->
+    <section class="hero">
+      <div class="row containers">
+        <div class="col-md-offset-1 col-md-8 para-a para ">
+          <h1 class="white hero-h1">Generate the <span class="pink">music</span></h1><h1 class="white"> you want</h1>
+          <p class="white para">Lorem ipsum <d></d>olor sit amet consectetur adipisicing elit. Assumenda nisi magnam temporibus, tenetur odit aliquam mollitia minima molestias earum! Optio! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis explicabo fugit ratione pariatur a sequi, provident nobis quisquam minima eaque.</p>
+        </div>
+        <div class="col image">
+          <img class="def" src="" alt="" srcset="">
+        </div>
+      </div>
+    </section>
+
+    <!-- unlimited section -->
+    <section class="unlimited ">
+      <div class="row containers para">
+        <div class="col-md-offset-1 col para flex-basis"><h1>Unlimited Access to 100K tracks</h1></div>
+        <div class="col para">
+          <p class="col-md-offset-1 blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nobis ipsam totam iusto deserunt, vero architecto libero nesciunt fuga, et dolore esse impedit corrupti, neque id possimus dignissimos. Error impedit optio totam, vero numquam atque sapiente doloremque, ipsa ratione, nisi non adipisci minus quo obcaecati eius? Quisquam sunt optio veniam?</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- working -->
+    <section class=" bg-blue">
+      <div class="containers">
+        <h1 class="white work">How it works </h1>
+        <div class="row">
+          <div class="col-md-4 col white icon-container flex-basis para">
+            <div class="circle mb-3"></div>
+            <div class="icon"><img src="{% static 'DEMOAPP/images/brain.png' %}" alt=""></div>
+            <h2>Create an account</h2>
+            <p>Create your account here before engaging in this web-site music-related.</p>
+          </div>
+          <div class="col-md-4 col white icon-container flex-basis para">
+            <div class="circle mb-3"></div>
+            <div class="icon"><img src="{% static 'DEMOAPP/images/pointer.png' %}" alt=""></div>
+            <h2>Upload your MIDI</h2>
+            <p>To generate music, first upload your music file in MIDI format. Other formats are not supported, till now.</p>
+          </div>
+          <div class="col-md-4 col white icon-container flex-basis para">
+            <div class="circle mb-3"></div>
+            <div class="icon"><img src="{% static 'DEMOAPP/images/smartphone.png' %}" alt=""></div>
+            <h2>Download Music</h2>
+            <p>After uploading, wait for few seconds and download the generated music.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- artists -->
+    <div class="row">
+    <section class="containers">
+      <h1 class="work blue pt-5 mb-2 text-center">Our Team</h1>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="pp ml-3"><img class="imgpp" src="{% static 'DEMOAPP/images/tiger.jpg' %}" alt=""></div>
+          <p class="blue h6 w-75 ml-5 mt-4 cen">Aashray Sainju </p>
+        </div>
+        <div class="col-md-3">
+          <div class="pp ml-3"><img class="imgpp" src="{% static 'DEMOAPP/images/jack.jpg' %}" alt=""> </div>
+          <p class="blue h6 w-75 ml-5 mt-4 cen">Jagadish Khadka</p>
+        </div>
+        <div class="col-md-3">
+          <div class="pp ml-3"><img class="imgpp" src="{% static 'DEMOAPP/images/james.jpg' %}" alt=""> </div>
+          <p class="blue h6 w-75 ml-5 mt-4 cen">James Shrestha</p>
+        </div>
+        <div class="col-md-3">
+          <div class="pp ml-3"><img class="imgpp" src="{% static 'DEMOAPP/images/rj.jpg' %}" alt=""></div>
+          <p class="blue h6 w-75 ml-5 mt-4 cen">Rajad Shakya</p>
+        </div>
+      </div>
+    </section>
+    </div>
+
+{% endblock content%}

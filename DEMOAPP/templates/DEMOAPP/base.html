@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>{{title}}</title>
+    {% else %}
+        <title>Major Project</title>
+    {% endif %}
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+    <!--
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    -->
+    <link href="{% static 'DEMOAPP/StyleSheet.css' %}" rel="stylesheet" type = "text/css"/>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="">
+    <!-- header section -->
+    <header class="header-section navbar-bg">
+        <nav class="navbar navbar-expand-lg navbar-light containers ">
+            <a class="navbar-brand white head" href="{% url 'home-page' %}">Music Composition using<span class="pink "> Machine Learning</span> </a>
+           <!-- <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "><i class="fa fa-bars white" ></i></span>
+            </button>
+-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+                  <a class="nav-link white side" href="{% url 'home-page' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link white side" href="{% url 'about-page' %}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link white side" href="{% url 'upload-page' %}">Upload</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link white side" href="{% url 'profile-page' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white side" href="{% url 'logout-page' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link white side" href="{% url 'login-page' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link white side" href="{% url 'register-page' %}">Register</a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-md- col-md-offset-2 " >
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class = "alert alert-{{ message.tags }}">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+
+
+    <!-- footer -->
+    <footer class="bg-blue">
+      <div class="containers py-4 white h4 text-center">
+        Music Composition using Machine Learning
+
+      </div>
+    </footer>
+
+</body>
+</html>

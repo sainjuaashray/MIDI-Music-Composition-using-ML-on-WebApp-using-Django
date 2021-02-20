@@ -1,0 +1,13 @@
+{%extends "DEMOAPP/base.html" %}
+{% block content %}
+
+<section class="hero">
+      <div class="row containers">
+        <div class="col-md-offset-1 col-md-8 para-a para ">
+          <h3 class="white">You have been successfully<span class="pink"> logged out</span></h3>
+          <p class="white para">Log in <d><a class="" href = "{% url 'login-page' %}">again?</a></d></p>
+        </div>
+      </div>
+    </section>
+
+{% endblock content%}

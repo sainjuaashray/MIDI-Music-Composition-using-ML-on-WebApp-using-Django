@@ -1,0 +1,30 @@
+{%extends "DEMOAPP/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-offset-2 content-section" >
+            <div class="col-md-3">
+              <div class="pp ml-3"><img class="imgpp" src="{{ user.profile.image.url }}" alt=""> </div>
+            </div>
+            <div class="media-body para-a para">
+              <h2 class="account-heading">{{ user.username }}</h2>
+              <p class="text-secondary">{{ user.email }}</p>
+            </div>
+          </div>
+          <div class="col-md-offset-2 col-md-8 para-a para">
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class = "form-group">
+                    <legend class ="border-bottom mb-4">Profile Info</legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class ="btn btn-outline-info" type="submit">Save</button>
+                </div>
+            </form>
+          </div>
+
+        </div>
+    </div>
+{% endblock content %}
